@@ -1,0 +1,28 @@
+datasets:
+  - json_path: /data_ssd/refcoco/refcoco_llava-onevision.json
+    sampling_strategy: "all" #"first:50%"
+  - json_path: /data_ssd/refcoco_g/refcoco_g_llava-onevision.json
+    sampling_strategy: "all" #"first:50%"
+  - json_path: /data_ssd/refcoco_plus/refcoco_plus_llava-onevision.json
+    sampling_strategy: "all" #"first:50%"
+  - json_path: /data_ssd/object365/object365_train_conversation_exist_image.json
+    sampling_strategy: "random:657473" #"first:50%"
+  - json_path: /data_ssd/pixmo-count/pixmo-count-train.json
+    sampling_strategy: "all" #"first:50%"
+  - json_path: /data_ssd/rec-8k/rec8k-train.json
+    sampling_strategy: "all" #"first:50%"
+  - json_path: /data_ssd/FSC147/FSC147-train.json
+    sampling_strategy: "all" #"first:50%"
+
+
+#モデルに渡すデータセットを記すymlファイル
+#sampling_strategy は、各データセットから訓練時にどのようにデータを抽出（サンプリング）するかを指定するオプションです。主に次のような指定方法があります。
+# "all"
+# データセット内の全サンプルをそのまま使う（＝サブサンプリングしない）。
+# "first:X%"
+# データセットを元の順序のまま見て、先頭から X % のサンプルだけを使う。
+# 例："first:50%" なら半分だけ使う
+# "random:N"
+# データセットからランダムに N 件だけ抽出して使う。
+# 例："random:657473" ならランダムに 657,473 件
+# 再現性を保つため、内部で固定のシードを使っていることが多いです。

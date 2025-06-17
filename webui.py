@@ -6,6 +6,9 @@ import gradio as gr
 
 from supported_models import MODEL_HF_PATH, MODEL_FAMILIES
 
+#finetuningをGUIで行う
+#基本bashファイルで十分だと思うが、使うときはlocal URLを使う
+#ただ、引数の勉強になる
 
 def launch_training(
     model_id, model_local_path, run_id, data_path, eval_data_path, image_folder, video_folder, num_frames,
